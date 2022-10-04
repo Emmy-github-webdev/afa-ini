@@ -1,0 +1,8 @@
+{
+  "mongoURL": "mongodb+srv://cluster:cluster@afa-ini-DB.3uqfvbf.mongodb.net/?retryWrites=true&w=majority",
+  
+  "jwtSecret": "AFATER43_YUERDFGSHJK940875423_GHYSDWEVDFYRTU734DSCX_FNMGYUTOUYTJHWR",
+
+  "gitHubeClientId": "de26c733019500ff8cc3",
+  "gitHubSecret": " 4f028756a594d2c180899b1ff4b184b3fa1ff701"
+}
