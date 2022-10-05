@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/test', TestRoutes)
-app.use('/api/users', userRoutes)
+app.use('/api/register', userRoutes)
 
 const PORT = process.env.PORT || 8000;
 
