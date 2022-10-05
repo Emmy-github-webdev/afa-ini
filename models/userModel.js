@@ -18,14 +18,13 @@ const UserSchema = new mongoose.Schema({
   },
 
   occupation: {
-    type: String,
-    default: 'none'
+    type: String
   },
 
   currentlyemployed: {
-    type: String,
-    default: 'no'  
+    type: String
   },
+  
   yearsOfEmployment: {
     type: Number,
     default: 0,
@@ -33,8 +32,7 @@ const UserSchema = new mongoose.Schema({
   },
 
   address: {
-    type: String,
-    default: 'none'
+    type: String
   },
 
   score: {

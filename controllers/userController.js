@@ -10,7 +10,7 @@ exports.signup = asyncHandler(async(req, res) => {
   if(userExists){
     res.status(400)
     throw new Error('User already exists')
-  }
+  };
 
   const user = await User.create({
     name, 
@@ -24,6 +24,34 @@ exports.signup = asyncHandler(async(req, res) => {
   })
 
   if(user){
+
+    let scoreAge, scoreOccupation, scoreCurrentlyemployed, scoreYearsOfEmployment, scoreAddress;
+
+    if (user.age < 18){
+      scoreAge = 0;
+    } else {
+      scoreAge = 2;
+    };
+
+    if (!user.occupation){
+      scoreOccupation = 0;
+    } else {
+      scoreOccupation = 2;
+    };
+
+    if(!user.currentlyemployed){
+      scoreCurrentlyemployed = 0;
+    } else {
+      scoreCurrentlyemployed = 2;
+    };
+
+    if(user.yearsOfEmployment < 1){
+      scoreYearsOfEmployment = 0;
+    }else {
+      scoreYearsOfEmployment = 2;
+    };
+
+    let totalScore = (scoreAge + scoreOccupation + scoreCurrentlyemployed + scoreYearsOfEmployment + scoreAddress);
     res.status(201).json({
       _id: user._id,
       name: user.name,
@@ -33,7 +61,7 @@ exports.signup = asyncHandler(async(req, res) => {
       currentlyemployed: user.currentlyemployed,
       yearsOfEmployment: user.yearsOfEmployment,
       address: user.address, 
-      address: user.score
+      score: totalScore
     })
   } else {
     res.status(400)
