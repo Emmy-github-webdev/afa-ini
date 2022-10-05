@@ -51,6 +51,12 @@ exports.signup = asyncHandler(async(req, res) => {
       scoreYearsOfEmployment = 2;
     };
 
+    if (!user.address){
+      scoreAddress = 0;
+    } else {
+      scoreAddress = 2;
+    };
+    
     let totalScore = (scoreAge + scoreOccupation + scoreCurrentlyemployed + scoreYearsOfEmployment + scoreAddress);
     res.status(201).json({
       _id: user._id,
