@@ -14,6 +14,7 @@ app.get("/", (req, res) => {
 
 app.use('/api/test', TestRoutes)
 app.use('/api/register', userRoutes)
+app.use('/api/scores', userRoutes)
 
 const PORT = process.env.PORT || 8000;
 
