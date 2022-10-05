@@ -13,11 +13,13 @@ const UserSchema = new mongoose.Schema({
   },
 
   age: {
-    type: Number
+    type: Number,
+    default: 0
   },
 
   occupation: {
-    type: String
+    type: String,
+    default: none
   },
 
   currentlyemployed: {
@@ -31,7 +33,14 @@ const UserSchema = new mongoose.Schema({
   },
 
   address: {
-    type: String
+    type: String,
+    default: none
+  },
+
+  score: {
+    type: Number,
+    required: true,
+    default: 0
   },
 
   date: {
@@ -40,3 +49,7 @@ const UserSchema = new mongoose.Schema({
   }
 
 });
+
+const User = mongoose.model('User', UserSchema);
+
+export default User;
