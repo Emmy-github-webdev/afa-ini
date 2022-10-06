@@ -4,8 +4,10 @@
   "description": "Afara Initiative project test",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "index": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run index\" \"npm run client\""
   },
   "repository": {
     "type": "git",
