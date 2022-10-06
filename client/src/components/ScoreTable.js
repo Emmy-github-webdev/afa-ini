@@ -1,21 +1,53 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 import './style.css';
 
 const ScoreTable = () => {
+ const [scores, setScores] = useState([]);
+
+  const fetchScores = async() => {
+    try {
+      axios.get('/api/scores')
+      .then((response) => {
+        //console.log(response);
+        const myScores = response.data;
+        //console.log(myScores);
+        setScores(myScores)
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchScores();
+  }, []);
 
   return (
     <div className="modal">
       <div className="modal-content">
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-          <tr>
-            <td>Jill</td>
-            <td>10</td>
-          </tr>
-        </table>
+        {scores.length > 0 ?(
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scores.map((scoreData, id) => {
+                return (
+                  <tr key={id}>
+                    <td>{scoreData.name}</td>
+                    <td>{scoreData.score}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        ): (
+          <p>No name and score found!</p>
+        )}
       </div>
     </div>
   );
