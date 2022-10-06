@@ -1,0 +1,32 @@
+{
+  "name": "afa-ini",
+  "version": "1.0.0",
+  "description": "Afara Initiative project test",
+  "main": "index.js",
+  "scripts": {
+    "index": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmy-github-webdev/afa-ini.git"
+  },
+  "author": "Emmanuel Ogah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emmy-github-webdev/afa-ini/issues"
+  },
+  "homepage": "https://github.com/Emmy-github-webdev/afa-ini#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^7.4.0",
+    "config": "^3.3.8",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.4",
+    "nodemon": "^2.0.20",
+    "request": "^2.88.2"
+  }
+}
