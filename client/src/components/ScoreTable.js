@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import './style.css';
 
 const ScoreTable = () => {
@@ -48,10 +49,12 @@ const ScoreTable = () => {
         ): (
           <p>No name and score found!</p>
         )}
-      </div>
         <div className="clearfix">
-          <button type="submit" className="signupbtn">Back to Sign Up Page</button>
+          <Link to='/'>
+           <button type="submit" className="signupbtn">Back to Sign Up Page</button>
+          </Link>
         </div>
+      </div>
     </div>
   );
 };
