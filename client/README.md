@@ -29,6 +29,9 @@ Do any design of your choice for the frontend, and just a 2 page implementation
 - Frontend: React.js
 - Backend: Node.js
 
+![screenshot](./monster.png)
+![screenshot](./monster.png)
+
 ## Clone Project
 
 [Build a simple Score Application](https://github.com/Emmy-github-webdev/afa-ini)
