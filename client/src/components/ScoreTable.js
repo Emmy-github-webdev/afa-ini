@@ -49,6 +49,9 @@ const ScoreTable = () => {
           <p>No name and score found!</p>
         )}
       </div>
+        <div className="clearfix">
+          <button type="submit" className="signupbtn">Back to Sign Up Page</button>
+        </div>
     </div>
   );
 };
